@@ -731,11 +731,11 @@
                 ]
             }
         },
-        "StudentPolicyHongKong": {
+        "StudentPolicySingapore": {
             "Type": "AWS::IAM::ManagedPolicy",
             "Properties": {
                 "Description": "Managed Policy to allow Student permissions",
-                "ManagedPolicyName": "StudentPolicyHongKong",
+                "ManagedPolicyName": "StudentPolicySingapore",
                 "PolicyDocument": {
                     "Version": "2012-10-17",
                     "Statement": [
@@ -758,7 +758,7 @@
                             "Resource": "*",
                             "Condition": {
                                 "StringEquals": {
-                                    "aws:RequestedRegion": "ap-east-1"
+                                    "aws:RequestedRegion": "ap-southeast-1"
                                 }
                             }
                         }
@@ -766,16 +766,16 @@
                 }
             }
         },
-        "StudentGroupHongKong": {
+        "StudentGroupSingapore": {
             "Type": "AWS::IAM::Group",
             "Properties": {
-                "GroupName": "StudentGroupHongKong",
+                "GroupName": "StudentGroupSingapore",
                 "ManagedPolicyArns": [
                     {
                         "Ref": "StudentPolicyGlobal"
                     },
                     {
-                        "Ref": "StudentPolicyHongKong"
+                        "Ref": "StudentPolicySingapore"
                     }
                 ]
             }
@@ -1119,7 +1119,7 @@
             "Properties": {
                 "Groups": [
                     {
-                        "Ref": "StudentGroupHongKong"
+                        "Ref": "StudentGroupSingapore"
                     }
                 ],
                 "LoginProfile": {

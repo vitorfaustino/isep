@@ -927,6 +927,153 @@
                 ]
             }
         },
+        "StudentPolicySeoul": {
+            "Type": "AWS::IAM::ManagedPolicy",
+            "Properties": {
+                "Description": "Managed Policy to allow Student permissions",
+                "ManagedPolicyName": "StudentPolicySeoul",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": [
+                                "ec2:*",
+                                "rds:*",
+                                "sns:*",
+                                "sqs:*",
+                                "apigateway:*",
+                                "lambda:*",
+                                "dynamodb:*",
+                                "cloudformation:*",
+                                "iam:PassRole",
+                                "cloudwatch:*",
+                                "elasticloadbalancing:*",
+                                "autoscaling:*"
+                            ],
+                            "Resource": "*",
+                            "Condition": {
+                                "StringEquals": {
+                                    "aws:RequestedRegion": "ap-northeast-2"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "StudentGroupSeoul": {
+            "Type": "AWS::IAM::Group",
+            "Properties": {
+                "GroupName": "StudentGroupSeoul",
+                "ManagedPolicyArns": [
+                    {
+                        "Ref": "StudentPolicyGlobal"
+                    },
+                    {
+                        "Ref": "StudentPolicySeoul"
+                    }
+                ]
+            }
+        },
+        "StudentPolicyMumbai": {
+            "Type": "AWS::IAM::ManagedPolicy",
+            "Properties": {
+                "Description": "Managed Policy to allow Student permissions",
+                "ManagedPolicyName": "StudentPolicyMumbai",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": [
+                                "ec2:*",
+                                "rds:*",
+                                "sns:*",
+                                "sqs:*",
+                                "apigateway:*",
+                                "lambda:*",
+                                "dynamodb:*",
+                                "cloudformation:*",
+                                "iam:PassRole",
+                                "cloudwatch:*",
+                                "elasticloadbalancing:*",
+                                "autoscaling:*"
+                            ],
+                            "Resource": "*",
+                            "Condition": {
+                                "StringEquals": {
+                                    "aws:RequestedRegion": "ap-south-1"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "StudentGroupMumbai": {
+            "Type": "AWS::IAM::Group",
+            "Properties": {
+                "GroupName": "StudentGroupMumbai",
+                "ManagedPolicyArns": [
+                    {
+                        "Ref": "StudentPolicyGlobal"
+                    },
+                    {
+                        "Ref": "StudentPolicyMumbai"
+                    }
+                ]
+            }
+        },
+        "StudentPolicyJakarta": {
+            "Type": "AWS::IAM::ManagedPolicy",
+            "Properties": {
+                "Description": "Managed Policy to allow Student permissions",
+                "ManagedPolicyName": "StudentPolicyJakarta",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": [
+                                "ec2:*",
+                                "rds:*",
+                                "sns:*",
+                                "sqs:*",
+                                "apigateway:*",
+                                "lambda:*",
+                                "dynamodb:*",
+                                "cloudformation:*",
+                                "iam:PassRole",
+                                "cloudwatch:*",
+                                "elasticloadbalancing:*",
+                                "autoscaling:*"
+                            ],
+                            "Resource": "*",
+                            "Condition": {
+                                "StringEquals": {
+                                    "aws:RequestedRegion": "ap-southeast-3"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "StudentGroupJakarta": {
+            "Type": "AWS::IAM::Group",
+            "Properties": {
+                "GroupName": "StudentGroupJakarta",
+                "ManagedPolicyArns": [
+                    {
+                        "Ref": "StudentPolicyGlobal"
+                    },
+                    {
+                        "Ref": "StudentPolicyJakarta"
+                    }
+                ]
+            }
+        },
         "Student1": {
             "Type": "AWS::IAM::User",
             "Properties": {
@@ -941,7 +1088,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student1@celfocus.com"
+                "UserName": "student1"
             }
         },
         "Student2": {
@@ -958,7 +1105,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student2@celfocus.com"
+                "UserName": "student2"
             }
         },
         "Student3": {
@@ -975,7 +1122,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student3@celfocus.com"
+                "UserName": "student3"
             }
         },
         "Student4": {
@@ -992,7 +1139,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student4@celfocus.com"
+                "UserName": "student4"
             }
         },
         "Student5": {
@@ -1009,7 +1156,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student5@celfocus.com"
+                "UserName": "student5"
             }
         },
         "Student6": {
@@ -1026,7 +1173,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student6@celfocus.com"
+                "UserName": "student6"
             }
         },
         "Student7": {
@@ -1043,7 +1190,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student7@celfocus.com"
+                "UserName": "student7"
             }
         },
         "Student8": {
@@ -1060,7 +1207,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student8@celfocus.com"
+                "UserName": "student8"
             }
         },
         "Student9": {
@@ -1077,7 +1224,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student9@celfocus.com"
+                "UserName": "student9"
             }
         },
         "Student10": {
@@ -1094,7 +1241,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student10@celfocus.com"
+                "UserName": "student10"
             }
         },
         "Student11": {
@@ -1111,7 +1258,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student11@celfocus.com"
+                "UserName": "student11"
             }
         },
         "Student12": {
@@ -1128,7 +1275,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student12@celfocus.com"
+                "UserName": "student12"
             }
         },
         "Student13": {
@@ -1145,7 +1292,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student13@celfocus.com"
+                "UserName": "student13"
             }
         },
         "Student14": {
@@ -1162,7 +1309,7 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student14@celfocus.com"
+                "UserName": "student14"
             }
         },
         "Student15": {
@@ -1179,7 +1326,58 @@
                     },
                     "PasswordResetRequired": "true"
                 },
-                "UserName": "student15@celfocus.com"
+                "UserName": "student15"
+            }
+        },
+        "Student16": {
+            "Type": "AWS::IAM::User",
+            "Properties": {
+                "Groups": [
+                    {
+                        "Ref": "StudentGroupSeoul"
+                    }
+                ],
+                "LoginProfile": {
+                    "Password": {
+                        "Ref": "SudentPassword"
+                    },
+                    "PasswordResetRequired": "true"
+                },
+                "UserName": "student16"
+            }
+        },
+        "Student17": {
+            "Type": "AWS::IAM::User",
+            "Properties": {
+                "Groups": [
+                    {
+                        "Ref": "StudentGroupMumbai"
+                    }
+                ],
+                "LoginProfile": {
+                    "Password": {
+                        "Ref": "SudentPassword"
+                    },
+                    "PasswordResetRequired": "true"
+                },
+                "UserName": "student17"
+            }
+        },
+        "Student18": {
+            "Type": "AWS::IAM::User",
+            "Properties": {
+                "Groups": [
+                    {
+                        "Ref": "StudentGroupJakarta"
+                    }
+                ],
+                "LoginProfile": {
+                    "Password": {
+                        "Ref": "SudentPassword"
+                    },
+                    "PasswordResetRequired": "true"
+                },
+                "UserName": "student18"
             }
         }
     }
